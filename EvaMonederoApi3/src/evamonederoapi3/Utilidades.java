@@ -13,33 +13,32 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author dam115
+ * @author urco1
  */
-
-public class Menu {
+public class Utilidades {
     static BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
-    public Menu(){};
     
-    public int mostrarMenu(){
-        int option = 0;
+    public Utilidades(){};
+    
+    public static double leerTexto(String texto) throws IOException{
+        double datosLectura = 0;
         int sw=1;
         do{
-        sw=1;
-        System.out.println("1-Crear Monedero");
-        System.out.println("2-Ingresar dinero al Monedero");
-        System.out.println("3-Retirar dinero del Monedero");
-        System.out.println("4-Ver saldo del Monedero");
-        System.out.println("5-Cerrar Programa");
+            sw=1;
         try {
-            option = Integer.parseInt(bufer.readLine());
+            System.out.println(texto);
+            datosLectura=Integer.parseInt(bufer.readLine());
         } catch (NumberFormatException ex) {
             System.out.println("Error");
             sw=0;
-        } catch (Exception ex) {
-            System.out.println("Error dos");
-            sw=0;
-        }
+     } //catch (Exception ex) {
+//            System.out.println("Error2");
+//            sw=0;
+//        }
         }while(sw==0);
-        return option;
+        return datosLectura;
     }
+
+    
+    
 }

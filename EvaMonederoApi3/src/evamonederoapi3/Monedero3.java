@@ -5,17 +5,24 @@
  */
 package evamonederoapi3;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author dam115
  */
 public class Monedero3 {
+
     private double saldo;
     //constructor
     public Monedero3(){
     }
     ///Cantidad Inicial
-    public Monedero3(Double cantidadInicial)throws ErrorCantidadInicialException{
+    public Monedero3(double cantidadInicial)throws ErrorCantidadInicialException{
         if (cantidadInicial>0) {
             this.saldo=cantidadInicial;
         }else{
@@ -39,5 +46,9 @@ public class Monedero3 {
         }else{
             throw new ErrorRetirarDineroException("No puedes sacar mas dinero del que hay en la cartera");
         }
+    }
+    //ver saldo
+    void verSaldo(){
+        System.out.println(this.saldo);
     }
 }//fin class
